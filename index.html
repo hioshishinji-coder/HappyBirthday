@@ -2,76 +2,41 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Animated Birthday Cake</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>I Love You Encoded </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
-    
 </head>
 <body>
 
-    <!-- Canvas สำหรับเอฟเฟกต์ -->
-  <canvas id="confettiCanvas"></canvas>
-  <canvas id="balloonCanvas"></canvas>
-
-
-<!-- partial:index.partial.html -->
-<div class="wrapper">
-  <div class="greeting">Happy Birthday <br>hiroshi shinji💖 </div>
-  <div class="container">
-    <img src="shinji.gif" class="my-imge" width="50px" alt="">
-  </div>
-  <div class="plate">
-    <div class="cake-wrap">
-      <div class="cake-topping">
-        <div class="topping-top">
-          <div class="candle-container">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="candle-wrap">
-              <div class="flame-wrap"></div>
-              <div class="candle-base">
-                <div class="candle-top"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="topping-front">
-          <div class="top-layer"></div>
-          <div class="bottom-layer"></div>
-        </div>
-      </div>
-      <div class="cake-base">
-        <div class="base-front"></div>
-        <div class="base-top"></div>
-      </div>
-      
-    </div>
-<br>
-<br>
-<div style="text-align:center; margin:20px 0;">
-  <input type="text" id="wishInput" placeholder="เขียนคำอวยพรที่นี่..." />
-  <button id="addWish">ส่ง</button>
+<div class="container">
+  <svg class="svg-container" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+    <line class="line line--left" x1="10" y1="17" x2="10" y2="183"> </line>
+    <line class="line line--rght" x1="490" y1="17" x2="490" y2="183"> </line>
+    <g>
+      <path class="lttr lttr--I" d="M42.2,73.9h11.4v52.1H42.2V73.9z"></path>
+      <path class="lttr lttr--L" d="M85.1,73.9h11.4v42.1h22.8v10H85.1V73.9z"></path>
+      <path class="lttr lttr--O" d="M123.9,100c0-15.2,11.7-26.9,27.2-26.9s27.2,11.7,27.2,26.9s-11.7,26.9-27.2,26.9S123.9,115.2,123.9,100zM166.9,100c0-9.2-6.8-16.5-15.8-16.5c-9,0-15.8,7.3-15.8,16.5s6.8,16.5,15.8,16.5C160.1,116.5,166.9,109.2,166.9,100z"> </path>
+      <path class="lttr lttr--V" d="M180.7,73.9H193l8.4,22.9c1.7,4.7,3.5,9.5,5,14.2h0.1c1.7-4.8,3.4-9.4,5.2-14.3l8.6-22.8h11.7l-19.9,52.1h-11.5L180.7,73.9z"></path>
+      <path class="lttr lttr--E" d="M239.1,73.9h32.2v10h-20.7v10.2h17.9v9.5h-17.9v12.4H272v10h-33V73.9z"></path>
+      <path class="lttr lttr--Y" d="M315.8,102.5l-20.1-28.6H309l6.3,9.4c2,3,4.2,6.4,6.3,9.6h0.1c2-3.2,4.1-6.4,6.3-9.6l6.3-9.4h12.9l-19.9,28.5v23.6h-11.4V102.5z"></path>
+      <path class="lttr lttr--O2" d="M348.8,100c0-15.2,11.7-26.9,27.2-26.9c15.5,0,27.2,11.7,27.2,26.9s-11.7,26.9-27.2,26.9C360.5,126.9,348.8,115.2,348.8,100z M391.8,100c0-9.2-6.8-16.5-15.8-16.5c-9,0-15.8,7.3-15.8,16.5s6.8,16.5,15.8,16.5C385,116.5,391.8,109.2,391.8,100z"></path>
+      <path class="lttr lttr--U" d="M412.4,101.1V73.9h11.4v26.7c0,10.9,2.4,15.9,11.5,15.9c8.4,0,11.4-4.6,11.4-15.8V73.9h11v26.9c0,7.8-1.1,13.5-4,17.7c-3.7,5.3-10.4,8.4-18.7,8.4c-8.4,0-15.1-3.1-18.8-8.5C413.4,114.2,412.4,108.5,412.4,101.1z"></path>
+    </g>
+  </svg>
+  <div class="mo-container"> </div>
 </div>
-<div id="floatingWishes"></div>
-
-    </div>
- 
 
 
-  
-<svg class="svg">
-  <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox"><path d="M0,0 V0.481 s0.021,0.37,0.078,0.404 s0.035,-0.296,0.102,-0.27 s0.007,0.363,0.096,0.354 s0.028,-0.466,0.1,-0.487 S0.406,0.999,0.457,0.999 s0.03,-0.502,0.075,-0.518 s0.041,0.488,0.081,0.274 c0.007,-0.038,0.021,-0.187,0.044,-0.215 c0.014,-0.017,0.038,0.401,0.075,0.392 s0.023,-0.28,0.074,-0.392 c0.022,-0.04,0.072,0.359,0.1,0.344 c0.057,-0.029,0.094,-0.405,0.094,-0.405 V-0.001"></path></clipPath>
-  <clipPath id="my-flame-path" clipPathUnits="objectBoundingBox"><path d="M0.501,0 s0.188,0.101,0.295,0.238 s0.123,0.15,0.169,0.286 S1,0.74,0.928,0.838 S0.711,1,0.501,1 S0.216,0.937,0.09,0.838 s-0.083,-0.149,0,-0.29 s0.23,-0.139,0.333,-0.276 S0.501,0,0.501,0"></path></clipPath>
-  <clipPath id="my-star-path" clipPathUnits="objectBoundingBox"><path d="M0.5,0.846 l-0.309,0.154,0.044,-0.357 L0,0.382 l0.336,-0.067 L0.5,0 l0.164,0.315,0.336,0.067,-0.235,0.261,0.044,0.357"></path></clipPath>
-</svg>
+<audio class="blup" style="display: none">
+  <source src="https://www.freesound.org/data/previews/265/265115_4373976-lq.mp3" type="audio/ogg">
+</audio >
+<audio class="blop" style="display: none">
+  <source src="https://www.freesound.org/data/previews/265/265115_4373976-lq.mp3" type="audio/ogg">
+</audio>
+<div class="sound"></div>
 
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'></script><script  src="script.js"></script> <script src="gg.js"></script>
-
+  <script src='//cdn.jsdelivr.net/mojs/latest/mo.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
