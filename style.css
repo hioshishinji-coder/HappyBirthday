@@ -325,3 +325,14 @@
   100% { transform: translate(-20px, -300px); }
 }
 
+
+.my-imge {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  transition: transform 0.3 ease;
+  transform: translateY(190px);
+}
+
