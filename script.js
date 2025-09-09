@@ -1,17 +1,4 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCpEAPpjj8qqXuC_yO6pW9qf5IBIdj1NU",
-  authDomain: "birthday-6217c.firebaseapp.com",
-  databaseURL: "https://birthday-6217c-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "birthday-6217c",
-  storageBucket: "birthday-6217c.appspot.com",
-  messagingSenderId: "59903835087",
-  appId: "1:59903835087:web:5422b871e6c891bc3e214a",
-  measurementId: "G-83XJRX6LRH"
-};
 
-// เริ่มเชื่อม Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
 
 
 
@@ -78,6 +65,9 @@ function tick() {
 
 
 
+
+
+
 document.getElementById("addWish").addEventListener("click", () => {
   const input = document.getElementById("wishInput");
   if (input.value.trim() !== "") {
@@ -118,6 +108,8 @@ function showFloatingWish(message, name) {
 
     input.value = "";
   }
+
+
 
 
 
