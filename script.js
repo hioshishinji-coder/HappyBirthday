@@ -1,7 +1,3 @@
-
-
-
-
 const timeline = gsap.timeline({
   duration: 0.3 });
 
@@ -67,47 +63,26 @@ function tick() {
 
 
 
-
 document.getElementById("addWish").addEventListener("click", () => {
   const input = document.getElementById("wishInput");
   if (input.value.trim() !== "") {
-    const newRef = db.ref("wishes").push();
-    newRef.set({
-      name: "Guest",
-      message: input.value,
-      timestamp: Date.now()
-    });
-    input.value = "";
-  }
-});
+    const bubble = document.createElement("div");
+    bubble.className = "wishBubble";
+    bubble.textContent = input.value;
 
-// โหลดคำอวยพรจาก Firebase แบบเรียลไทม์
-db.ref("wishes").on("value", (snapshot) => {
-  const data = snapshot.val();
-  document.getElementById("floatingWishes").innerHTML = "";
-  for (let id in data) {
-    showFloatingWish(data[id].message, data[id].name);
-  }
-});
+    // สุ่มตำแหน่งเริ่มต้น
+    bubble.style.left = Math.random() * 80 + "vw";
+    bubble.style.top = Math.random() * 80 + "vh";
 
-// ฟังก์ชันโชว์คำอวยพรลอย
-function showFloatingWish(message, name) {
-  const bubble = document.createElement("div");
-  bubble.className = "wishBubble";
-  bubble.textContent = `${name}: ${message}`;
+    // สุ่มสีพาสเทล
+    const colors = ["#ffb6c1", "#ffd1dc", "#b5ead7", "#c7ceea", "#ffdac1", "#e0bbe4"];
+    bubble.style.color = colors[Math.floor(Math.random() * colors.length)];
 
-  // สุ่มตำแหน่ง
-  bubble.style.left = Math.random() * 80 + "vw";
-  bubble.style.top = Math.random() * 80 + "vh";
-
-  // สีสุ่ม
-  const colors = ["#ffb6c1", "#ffd1dc", "#b5ead7", "#c7ceea", "#ffdac1", "#e0bbe4"];
-  bubble.style.color = colors[Math.floor(Math.random() * colors.length)];
-
-  document.getElementById("floatingWishes").appendChild(bubble);
+    document.getElementById("floatingWishes").appendChild(bubble);
 
     input.value = "";
   }
+});
 
 
 
